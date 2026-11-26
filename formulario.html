@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Salvaje</title>
+    
+    <link rel="stylesheet" href="estatic\css\estilos2.css">
+</head>
+<body>
+    <main class="form-container">
+        <header class="form-header">
+            <h1>Expedición Salvaje 🌿</h1>
+            <p>Elige tu grupo de animales favorito para ver su información.</p>
+        </header>
+
+        <form id="registroForm" class="custom-form">
+            
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+               <input type="text" id="nombre" name="nombre" placeholder="Ej. Tarzán de la Selva" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="selva@ejemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required minlength="8">
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="1" max="120" placeholder="Ej. 25" required>
+            </div>
+
+            <div class="form-group">
+                <label for="animal">Grupo de animales favorito:</label>
+                <select id="animal" name="animal" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="mamiferos">Mamíferos 🦁</option>
+                    <option value="aves">Aves 🦅</option>
+                    <option value="peces">Peces 🐠</option>
+                    <option value="reptiles">Reptiles 🐍</option>
+                    <option value="anfibios">Anfibios 🐸</option>
+                     <option value="otros">Cualquier tipo</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Adentrarse en la Selva</button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Script de JavaScript actualizado con tus grupos -->
+    <script>
+        const form = document.getElementById('registroForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const grupoSeleccionado = document.getElementById('animal').value;
+
+           
+            const paginasGrupos = {
+                "mamiferos": "mamiferos.html",
+                "aves": "aves.html",
+                "peces": "peces.html",
+                "reptiles": "reptiles.html",
+                "anfibios": "anfibios.html",
+                "otros": "index.html"
+            };
+
+            if (paginasGrupos[grupoSeleccionado]) {
+                window.location.href = paginasGrupos[grupoSeleccionado];
+            } else {
+                alert("Por favor selecciona una opción válida.");
+            }
+        });
+    </script>
+</body>
+</html>

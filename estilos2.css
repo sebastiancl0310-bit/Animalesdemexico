@@ -1,0 +1,124 @@
+body {
+    background: linear-gradient(135deg, #1b3b22 0%, #0d1f12 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-container {
+    background: rgba(26, 54, 34, 0.85);
+    backdrop-filter: blur(10px);
+    border: 2px solid #2e7d32;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+                inset 0 0 15px rgba(46, 125, 50, 0.2);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: "🍃";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 4rem;
+    opacity: 0.15;
+    transform: rotate(25deg);
+    pointer-events: none;
+}
+
+.form-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px dashed rgba(76, 175, 80, 0.4);
+    padding-bottom: 1rem;
+}
+
+.form-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #81c784;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.form-header p {
+    font-size: 0.95rem;
+    color: #a5d6a7;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #c8e6c9;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #388e3c;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: rgba(13, 31, 18, 0.8);
+    color: #ffffff;
+}
+
+.form-group input::placeholder {
+    color: #66bb6a;
+    opacity: 0.6;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #81c784;
+    background-color: rgba(13, 31, 18, 1);
+    box-shadow: 0 0 0 4px rgba(129, 199, 132, 0.25);
+}
+
+.form-group select option {
+    background-color: #1b3b22;
+    color: #ffffff;
+}
+
+.form-actions {
+    margin-top: 2rem;
+}
+
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+    color: white;
+    border: none;
+    padding: 0.85rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.5);
+    transform: translateY(-2px);
+}
